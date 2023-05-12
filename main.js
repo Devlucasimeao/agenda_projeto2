@@ -4,8 +4,15 @@ let linhas = '';
 form.addEventListener('submit', function(e){
     e.preventDefault();
     
+    adicionaLinha();
+    atualizaTabela();
 
-    const inputNome = document.getElementById('nome-contato'); 
+
+    form.reset();
+});
+
+function adicionaLinha() {
+        const inputNome = document.getElementById('nome-contato'); 
     const inputNumero = document.getElementById('numero-contato');
 
     let linha = '<tr>';
@@ -15,8 +22,10 @@ form.addEventListener('submit', function(e){
 
     linhas += linha;
 
+
+}
+
+function atualizaTabela() {
     const corpoTabela = document.querySelector('tbody');
     corpoTabela.innerHTML = linhas;
-
-    form.reset();
-});
+}
